@@ -88,3 +88,23 @@ textarea:not([rows]) {
 :target {
   scroll-margin-block: 5ex;
 }
+
+/* Magic Goes Here */
+
+body {
+  height: 100vh;
+  background-color: blueviolet;
+  color: white;
+}
+
+.container {
+  width: 600px;
+  height: 600px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.gridBox {
+  background-color: white;
+  flex: 1 0;
+}
