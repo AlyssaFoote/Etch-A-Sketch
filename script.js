@@ -1,4 +1,5 @@
 const container = document.querySelector('.container');
+const output = document.querySelector('output');
 
 //On page load, create a div with 16x16 grid rows and columns
 const gridBoxes = (gridRows) => {
@@ -15,7 +16,14 @@ const gridBoxes = (gridRows) => {
   }
 };
 
-gridBoxes(16);
+gridBoxes(output.textContent);
+
+addGlobalEventListener('mouseup', 'input', (e) => {
+  while (container.firstChild) {
+    container.removeChild(container.lastChild);
+  }
+  gridBoxes(output.textContent);
+});
 
 //Generate a random color
 let getRandomColor = () => {
@@ -37,3 +45,9 @@ function addGlobalEventListener(type, selector, callback) {
 addGlobalEventListener('mouseover', '.gridBox', (e) => {
   e.target.style.backgroundColor = getRandomColor();
 });
+
+function getValue() {
+  let power = input.value;
+  let result = Math.pow(10, +power);
+  output.value = result;
+}
