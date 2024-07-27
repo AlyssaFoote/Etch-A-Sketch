@@ -9,6 +9,14 @@
   <body>
     <section class="header">
       <h1>Etch-A-Sketch</h1>
+      <input
+        type="range"
+        value="16"
+        min="16"
+        max="100"
+        oninput="this.nextElementSibling.value = this.value"
+      />
+      <output>16</output>
     </section>
 
     <div class="container"></div>
